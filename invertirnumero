@@ -1,0 +1,27 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int invertir (int n){
+	int a=0,x;
+	while(n>0){
+     x=n%10;
+	 a=a*10+x;
+	 n=n/10;
+	}
+	return(a);
+}
+
+
+
+void main(){
+	int nro,r;
+	cout<<"introducirnumero:";
+	cin>>nro;
+	r=invertir(nro);
+		cout<<"es "<<r;
+	getch();
+}
+
+
