@@ -1,7 +1,19 @@
+#include "stdafx.h"
 #include <iostream>
-#include <conio.h>
+#include "conio.h"
 
 using namespace std;
+
+int sumadigitos(int n);
+
+void main(){
+	int nro,r;
+	cout<<"introducirnumero:";
+	cin>>nro;
+	r=sumadigitos(nro);
+	cout<<"la suma es"<<r;
+	getch();
+}
 
 int sumadigitos(int n){
 	int s=0,d;
@@ -11,13 +23,4 @@ int sumadigitos(int n){
 		n=n/10;
 	}
 	return(s);
-}
-
-void main(){
-	int nro,r;
-	cout<<"introducirnumero:";
-	cin>>nro;
-	r=sumadigitos(nro);
-		cout<<"la suma es"<<r;
-	getch();
 }
