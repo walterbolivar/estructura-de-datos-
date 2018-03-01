@@ -1,0 +1,21 @@
+#include "stdafx.h"
+#include "conio.h"
+#include <iostream>
+using namespace std;
+void main()
+{int N,r,c;
+ cout<<"Ingrese un numero: "<<endl;
+ cin>>N;
+ while(N>0)
+ {r=N%10;
+  if(r>7)
+	  cout<<"El numero "<<r<<" no pertenece a su base."<<endl;
+  c=N/10;
+  N=c;
+ }
+_getch();
+}
+
+
+
+
