@@ -1,0 +1,23 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+int sumadigitos(int n){
+	int s=0,d;
+	while(n>0){
+		d=n%10;
+		s=s+d;
+		n=n/10;
+	}
+	return(s);
+}
+
+void main(){
+	int nro,r;
+	cout<<"introducirnumero:";
+	cin>>nro;
+	r=sumadigitos(nro);
+		cout<<"la suma es"<<r;
+	getch();
+}
