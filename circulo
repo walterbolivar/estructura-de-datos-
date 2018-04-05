@@ -1,0 +1,14 @@
+#pragma once
+class circuloo
+{
+private:
+	float r;
+public:
+	circuloo(void);
+	~circuloo(void);
+
+
+float calcularperimetro(float r);
+float calculararea (float r);
+};
+
