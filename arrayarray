@@ -1,0 +1,70 @@
+// arrayarray.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <iostream>
+#include "conio.h"
+#include <string>
+
+#define MAX 10
+
+using namespace std;
+
+struct vec{
+	string v[MAX][MAX];
+};
+
+//Prototipos
+void cargarmatriz(vec M[MAX][MAX], int tam, int col,int tamf, int tamc);
+void mostrarmatriz(vec M[MAX][MAX], int tam,int col, int tamf,int tamc);
+
+void main()
+{
+	vec MAT[MAX][MAX];
+	int n,m,p,q;
+	do {
+		cout<<"Ingresar el tamaño de las filas: ";
+		cin>>n;
+	}while ((n>MAX)||(n<=0));
+	do {
+		cout<<"Ingresar el tamaño de las columnas: ";
+		cin>>m;
+	}while ((m>MAX)||(m<=0));
+	do {
+		cout<<"Ingresar el tamaño de la fila de la matriz: ";
+		cin>>p;
+	}while ((p>MAX)||(p<=0));
+	do {
+		cout<<"Ingresar el tamaño de la columna de la matriz: ";
+		cin>>q;
+	}while ((q>MAX)||(q<=0));
+	cargarmatriz(MAT,n,m,p,q);
+	mostrarmatriz(MAT,n,m,p,q);
+	getch();
+}
+
+void cargarmatriz(vec M[MAX][MAX], int tam, int col,int tamf, int tamc)
+{
+	cin.ignore();
+	for (int i=0;i<tam;i++)
+		for (int j=0;j<col;j++)
+			for (int k=0;k<tamf;k++)
+				for (int l=0;l<tamc;l++)
+				{
+					cout <<"M["<<i<<"]["<<j<<"].["<<k<<"]["<<l<<"]= ";
+					getline(cin,M[i][j].v[k][l]); // tipo string
+				}
+
+}
+
+void mostrarmatriz(vec M[MAX][MAX], int tam,int col, int tamf, int tamc)
+{
+	for (int i=0;i<tam;i++)
+		for (int j=0;j<col;j++)
+			for (int k=0;k<tamf;k++)
+				for (int l=0;l<tamc;l++)
+				{
+					cout <<"M["<<i<<"]["<<j<<"].["<<k<<"]["<<l<<"]= ";
+					cout << M[i][j].v[k][l]<<endl;
+				}
+}
